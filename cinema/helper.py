@@ -2,13 +2,10 @@ import os
 import pathlib
 import uuid
 from typing import Optional
-
 from django.utils.text import slugify
 
 
 def movies_image_path(movie: Optional["Movie"], filename: str) -> str:
-    from cinema.models import Movie
-
     filename = (
         f"{slugify(movie.title)}-"
         f"{uuid.uuid4()}"
