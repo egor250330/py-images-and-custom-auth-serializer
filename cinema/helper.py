@@ -1,8 +1,11 @@
 import os
 import pathlib
 import uuid
-from typing import Optional
+from typing import Optional, TYPE_CHECKING
 from django.utils.text import slugify
+
+if TYPE_CHECKING:
+    from cinema.models import Movie
 
 
 def movies_image_path(movie: Optional["Movie"], filename: str) -> str:
